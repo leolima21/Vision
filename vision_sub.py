@@ -41,16 +41,17 @@ def print_info(tela, temperatura, radiacao):
 
 
 # Funcao q ira executar sistema de visao
+# Funcao q ira executar sistema de visao
 def callback(data):
     # Criacao do objeto de convercao
     bridge = CvBridge()
 
     # Converter a imagem ros para imagem cv2
-    cv2_frame = bridge.imgmsg_to_cv2(data, "bgr8")
-
+    cv2_raw = bridge.imgmsg_to_cv2(data, "bgr8")
+    cv2_frame = cv2.resize(cv2_raw,(int(320),int(240)))    
     # Escrever as informacoes na imagem
     print_info(cv2_frame, temp, rad)
-
+    
     # Exibir a imagem em uma janela
     cv2.imshow('ROSBOT1 Vision', cv2_frame)    
 
@@ -74,5 +75,3 @@ def listener():
 # Funcao main
 if __name__ == '__main__':
     listener()
-
-
