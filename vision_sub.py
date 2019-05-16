@@ -41,7 +41,6 @@ def print_info(tela, temperatura, radiacao):
 
 
 # Funcao q ira executar sistema de visao
-# Funcao q ira executar sistema de visao
 def callback(data):
     # Criacao do objeto de convercao
     bridge = CvBridge()
