@@ -41,8 +41,7 @@ def talker():
         pub.publish(ros_frame)
 
         # Esperar algum tempo para a proxima publicacao
-        # time.sleep(0.5) # 15 publicacoes por segundo
-
+        # time.sleep(0.5) 
 
 # Funcao main
 if __name__ == '__main__':
